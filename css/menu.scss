@@ -1,0 +1,57 @@
+/* Rushy Panchal 
+menu.scss */
+
+@import "_menulib";
+
+.nav-icon {
+	font-size: 0px;
+	color: $nav-icon-color;
+	border-radius: 3px;
+	padding: $nav-icon-padding;
+	&:active, &:focus {
+		outline-width: 0px;
+		}
+	}
+.nav-icon-open {
+	@extend .nav-icon;
+	color: $nav-icon-open-color;
+	}
+ul.nav-menu {
+	list-style-type: none;
+	overflow: hidden;
+	li {
+		padding-left: $nav-menu-elem-padding;
+		display: inline-block;
+		a {
+			color: $nav-elem-color;
+			}
+		.active {
+			color: $nav-elem-active-color;
+			}
+		}
+	}
+
+// Desktop Devices
+@media (min-device-width: 769px) and (min-width: 769px) {
+	ul.nav-menu {
+		height: auto;
+		li a:hover {
+			color: $nav-elem-active-color;
+			}
+		}
+	}
+
+// Mobile Devices
+@media (max-device-width: 768px), (max-width: 768px) {
+	.nav-icon {
+		font-size: $nav-icon-size;
+		border: 1px solid;
+		}
+	ul.nav-menu  {
+		padding: 0px;
+		height: 0px;
+		li {
+			padding-right: $nav-elem-padding;
+			}
+		}
+	}
